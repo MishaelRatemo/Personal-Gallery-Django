@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Location(models.Model):
-    location_name = models.CharField()
+    location_name = models.CharField(max_length=50)
     
     def __str__(self):
         return self.location_name
@@ -14,7 +14,7 @@ class Location(models.Model):
         self.delete()       
    
 class Category(models.Model):
-    category_name = models.CharField()
+    category_name = models.CharField(max_length=50)
     
     def __str__(self):
         return self.category_name
