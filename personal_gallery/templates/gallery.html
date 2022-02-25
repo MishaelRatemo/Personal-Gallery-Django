@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    {{block.super}}
+   <main class="home container-fluid " >
+    <div class="d-flex justify-content-around flex-wrap">
+        {% for gal in gallery %}       
+        
+            
+            <button type="button" class="btn w-25 " data-bs-toggle="modal" data-bs-target="#imageInfo">
+                <img src="{{gal.image.url}}" class="img-fluid" alt="Image">
+            </button>
+            
+            <!-- pop up -->
+            <div class="modal  fade" id="imageInfo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered ">
+                <div class="modal-content bg-dark">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">{{ gal.img_name }}</h5>
+                    <button type="button" class="btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="{{gal.image.url}}" class="img-fluid" alt="Image">
+                        <p>
+                            {{gal.img_description}}
+                        </p>
+                        <div class="d-flex">
+                            <h4>Category: {{gal.category}} &nbsp;</h4>
+                            <h4> &nbsp; Lacated in: {{gal.location}}</h4>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Understood</button> -->
+                    </div>
+                </div>
+                </div>
+            </div>
+        {% empty %}
+        <h2>Gallery is empty!! Come back  Later</h2> 
+        {% endfor %}         
+    </div>
+   </main>
+{% endblock %}

@@ -1,0 +1,12 @@
+.home{
+    background-color: rgb(49, 49, 49);
+    /* background: url(../images/banner.png) no-repeat ; */
+    background-size:contain;
+    box-sizing: border-box;
+    margin: 0;
+    color:white;
+    min-height:84.1vh;
+}
+.welcome{
+    top: 5%;
+}
