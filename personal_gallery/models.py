@@ -26,7 +26,7 @@ class Category(models.Model):
         self.delete()
         
 class Image(models.Model):
-    image = models.ImageField(upload_to='images')
+    image = models.ImageField(upload_to='images/')
     img_name = models.CharField(max_length=100)
     img_description = models.TextField()
     posted_on = models.DateTimeField(auto_now_add=True)
@@ -52,7 +52,12 @@ class Image(models.Model):
     def get_image_byid(cls,id):
         image = cls.objects.filter(id=id).all()
         return image
-
+    
+    @classmethod
+    def get_images(cls):
+        image = cls.objects.all()
+        return image
+    
     @classmethod
     def search_image_by_cat(cls,cat):
         res_images = cls.objects.filter(category_icontains=cat)
