@@ -4,11 +4,11 @@
 {% block content %}
     {{block.super}}
    <main class="home container-fluid " >
-    <div class="d-flex justify-content-around flex-wrap">
+    <div class="d-flex justify-content-around flex-wrap" >
         {% for gal in gallery %}       
         
             
-            <button type="button" class="btn w-25 " data-bs-toggle="modal" data-bs-target="#imageInfo">
+            <button type="button" class="btn w-25 " data-bs-toggle="modal" data-bs-target="#imageInfo" data-aos="zoom-in-up" data-aos-duration="1000">
                 <img src="{{gal.image.url}}" class="img-fluid" alt="Image">
             </button>
             
