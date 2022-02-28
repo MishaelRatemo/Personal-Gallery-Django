@@ -29,3 +29,10 @@ def search(request):
     else:
         messages = "Please enter a keyword to search"
         return render(request,'search.html',{'message': messages})
+def about(request):
+    title = "About Me"
+    return render(request,'about.html',{'aboutme':title})
+
+def contact(request):
+    title = "Contact Me"
+    return render(request,'contact.html',{'contact':title})
