@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    {{block.super}}
+   <main class="home py-2" >
+    <div class="d-flex small justify-content-center align-items-center position">
+        <img src="{% static 'images/about.png' %}" style="height:84vh; width:100%" class="img-fluid" alt="aboutmeimage" data-aos="fade-right" data-aos-duration="2000">
+        <div style="background-color:#C4C4C4" class="text-center text-dark" data-aos="fade-left" data-aos-duration="2000">
+            <H4 class="display-3 fw-bolder" data-aos="fade-left" data-aos-duration="4000">{{aboutme}}</H4>
+            <p class="display-6" >
+                Am  a young enthuasist  of web and  strategists who enable other youngsters to stand out from the rest in this digital world. 
+                Whether you are a start-up or an established web dev , Mismora has the expertise to lead you in the right way.
+            </p>
+        </div>
+    </div>
+   </main>
+{% endblock %}
