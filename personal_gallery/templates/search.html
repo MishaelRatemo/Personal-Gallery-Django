@@ -26,12 +26,12 @@
     <div class="d-flex  flex-wrap justify-content-around">
         {% if images %}
         {% for photo in images %}
-        <button type="button" class="btn img-size w-50 " data-bs-toggle="modal" data-bs-target="#more" data-aos="zoom-in-down" data-aos-duration="2000" >
+        <button type="button" class="btn img-size w-50 " data-bs-toggle="modal" data-bs-target="#{{photo.id}}" data-aos="zoom-in-down" data-aos-duration="2000" >
             <img src="{{photo.image.url}}" class="img-fluid" alt="Image">
         </button>
         
         <!-- pop up -->
-        <div class="modal  fade" id="more" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal  fade detail" id="{{photo.id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered ">
             <div class="modal-content bg-dark">
                 <div class="modal-header">
