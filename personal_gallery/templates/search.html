@@ -4,7 +4,7 @@
 {% block content %}
 {{block.super}}
 <main class="container home m-auto">
-    <div class="row">
+    <div class="row text-center">
         {% if images %}
             <h3 class="py-4 text-center">
                 We found {{ images | length}} search Results for <i class="text-decoration-underline">{{message}}</i> Category
@@ -12,7 +12,7 @@
         {% else %}
             <h5>Sorry,Your search - {{message}} - did not match any categories</h5>
             <h5>Suggestions:</h5>
-            <ul>
+            <ul class="text-right">
                 <li>Make sure that all words are spelled correctly.</li>
                 <li>Try different keywords.e.g Food,Animal,culture etc</li>
                 <li>Try more general keywords  </li> 
@@ -26,7 +26,7 @@
     <div class="d-flex  flex-wrap justify-content-around">
         {% if images %}
         {% for photo in images %}
-        <button type="button" class="btn w-50 " data-bs-toggle="modal" data-bs-target="#more" data-aos="zoom-in-down" data-aos-duration="2000" >
+        <button type="button" class="btn img-size w-50 " data-bs-toggle="modal" data-bs-target="#more" data-aos="zoom-in-down" data-aos-duration="2000" >
             <img src="{{photo.image.url}}" class="img-fluid" alt="Image">
         </button>
         
