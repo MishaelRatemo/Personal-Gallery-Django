@@ -8,12 +8,12 @@
         {% for gal in gallery %}       
         
             
-            <button type="button" class="btn img-size " data-bs-toggle="modal" data-bs-target="#imageInfo" data-aos="zoom-in-up" data-aos-duration="1000">
+            <button type="button" class="btn img-size " data-bs-toggle="modal" data-bs-target="#image{{image.id}}" data-aos="zoom-in-up" data-aos-duration="1000">
                 <img src="{{gal.image.url}}" class="img-fluid" alt="Image">
             </button>
             
             <!-- pop up -->
-            <div class="modal  fade" id="imageInfo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal  fade" id="image{{image.id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered ">
                 <div class="modal-content bg-dark">
                     <div class="modal-header">
